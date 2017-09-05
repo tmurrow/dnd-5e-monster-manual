@@ -1,0 +1,47 @@
+<#@ template hostspecific="true" language="C#" #>
+<#@ include file="EF.Utility.CS.ttinclude" #><#@
+ output extension=".cs" #><#
+
+    var efHost = (EfTextTemplateHost)Host;
+    var code = new CodeGenerationTools(this);
+#>
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using <#= code.EscapeNamespace(efHost.MappingNamespace) #>;
+
+namespace <#= code.EscapeNamespace(efHost.Namespace) #>
+{
+    public partial class <#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(efHost.EntityContainer.Name).Replace("_", "") #> : DbContext
+    {
+        static <#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(efHost.EntityContainer.Name).Replace("_", "") #>()
+        {
+            Database.SetInitializer<<#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(efHost.EntityContainer.Name).Replace("_", "") #>>(null);
+        }
+
+        public <#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(efHost.EntityContainer.Name).Replace("_", "") #>()
+            : base("Name=<#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(efHost.EntityContainer.Name).Replace("_", "") #>")
+        {
+        }
+
+<#
+    foreach (var set in efHost.EntityContainer.BaseEntitySets.OfType<EntitySet>())
+    {
+#>
+        public DbSet<<#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(set.ElementType.Name).Replace("_", "") #>> <#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(set.Name).Replace("_", "") #> { get; set; }
+<#
+    }
+#>
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+<#
+    foreach (var set in efHost.EntityContainer.BaseEntitySets.OfType<EntitySet>())
+    {
+#>
+            modelBuilder.Configurations.Add(new <#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(set.ElementType.Name).Replace("_", "") #>Map());
+<#
+    }
+#>
+        }
+    }
+}
