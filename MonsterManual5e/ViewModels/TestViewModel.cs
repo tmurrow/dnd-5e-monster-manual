@@ -30,6 +30,6 @@ namespace MonsterManual5e.ViewModels
 
         public ICollection<Speed> Speeds { get; set; }
 
-        public ICollection<Models.Type> Types { get; set; }
+        public ICollection<MonsterType> Types { get; set; }
     }
 }

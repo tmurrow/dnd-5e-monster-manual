@@ -24,9 +24,6 @@ namespace MonsterManual5e.Models.Mapping
             this.Property(t => t.LanguageNote)
                 .HasMaxLength(127);
 
-            this.Property(t => t.ChallengNote)
-                .HasMaxLength(45);
-
             // Table & Column Mappings
             this.ToTable("monster", "dnd_monster");
             this.Property(t => t.Id).HasColumnName("id");
@@ -54,7 +51,8 @@ namespace MonsterManual5e.Models.Mapping
             this.Property(t => t.PassivePerception).HasColumnName("passive_perception");
             this.Property(t => t.LanguageNote).HasColumnName("language_note");
             this.Property(t => t.ChallengeRating).HasColumnName("challenge_rating");
-            this.Property(t => t.ChallengNote).HasColumnName("challeng_note");
+            this.Property(t => t.ExperiencePoints).HasColumnName("experience_points");
+            this.Property(t => t.TelepathyDistance).HasColumnName("telepathy_distance");
 
             // Relationships
             this.HasMany(t => t.Tags)
@@ -75,7 +73,7 @@ namespace MonsterManual5e.Models.Mapping
             this.HasRequired(t => t.Size)
                 .WithMany(t => t.Monsters)
                 .HasForeignKey(d => d.SizeId);
-            this.HasRequired(t => t.Type)
+            this.HasRequired(t => t.MonsterType)
                 .WithMany(t => t.Monsters)
                 .HasForeignKey(d => d.TypeId);
 

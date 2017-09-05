@@ -19,7 +19,7 @@ namespace <#= code.EscapeNamespace(efHost.Namespace) #>
         }
 
         public <#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(efHost.EntityContainer.Name).Replace("_", "") #>()
-            : base("Name=<#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(efHost.EntityContainer.Name).Replace("_", "") #>")
+            : base("Name=<#= efHost.EntityContainer.Name #>")
         {
         }
 
@@ -28,10 +28,10 @@ namespace <#= code.EscapeNamespace(efHost.Namespace) #>
     {
 #>
         public DbSet<<#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(set.ElementType.Name).Replace("_", "") #>> <#= CultureInfo.CurrentCulture.TextInfo.ToTitleCase(set.Name).Replace("_", "") #> { get; set; }
+
 <#
     }
 #>
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
 <#

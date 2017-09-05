@@ -3,14 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MonsterManual5e.Models;
+using MonsterManual5e.ViewModels;
+using MonsterManual5e.Repositories;
 
 namespace MonsterManual5e.Controllers
 {
     public class HomeController : Controller
     {
+        MonsterRepository mrepo = new MonsterRepository();
+
         public ActionResult Index()
         {
-            return View();
+            ListViewModel vm = new ListViewModel();
+            vm.Monsters = mrepo.GetAllMonsters().ToList();
+
+            return View(vm);
         }
 
         public ActionResult About()

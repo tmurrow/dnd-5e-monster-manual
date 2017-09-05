@@ -50,6 +50,7 @@ namespace <#= code.EscapeNamespace(efHost.Namespace) #>
         }
 #>
         <#= Accessibility.ForProperty(property) #> <#= typeUsage #> <#= code.Escape(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(property.Name).Replace("_", "")) #> { get; set; }
+
 <#
     }
 
@@ -59,12 +60,14 @@ namespace <#= code.EscapeNamespace(efHost.Namespace) #>
         {
 #>
         public virtual ICollection<<#= code.Escape(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(navProperty.ToEndMember.GetEntityType().Name).Replace("_", "")) #>> <#= code.Escape(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(navProperty.Name).Replace("_", "")) #> { get; set; }
+
 <#
         }
         else
         {
 #>
         public virtual <#= code.Escape(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(navProperty.ToEndMember.GetEntityType().Name).Replace("_", "")) #> <#= code.Escape(CultureInfo.CurrentCulture.TextInfo.ToTitleCase(navProperty.Name).Replace("_", "")) #> { get; set; }
+
 <#
         }
     }

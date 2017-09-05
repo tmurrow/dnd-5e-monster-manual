@@ -14,12 +14,20 @@ namespace MonsterManual5e.Models
         }
 
         public int Id { get; set; }
+
         public string Name { get; set; }
+
         public int Order { get; set; }
+
         public string Note { get; set; }
+
         public virtual ICollection<XrefMonsterDamageType> XrefMonsterDamageType { get; set; }
+
         public virtual ICollection<Monster> Monsters { get; set; }
+
         public virtual ICollection<Monster> Monsters1 { get; set; }
+
         public virtual ICollection<Monster> Monsters2 { get; set; }
+
     }
 }
