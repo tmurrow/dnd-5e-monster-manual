@@ -28,6 +28,8 @@ namespace MonsterManual5e.Controllers
             vm.Sizes = SelectListBuilder.GetSizes().ToList();
             vm.Types = SelectListBuilder.GetTypes().ToList();
             vm.Alignments = SelectListBuilder.GetAlignments().ToList();
+            vm.Senses = SelectListBuilder.GetSenses().ToList();
+            vm.Skills = SelectListBuilder.GetSkills().ToList();
 
             return View(vm);
         }

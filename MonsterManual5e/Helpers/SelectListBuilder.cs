@@ -35,7 +35,7 @@ namespace MonsterManual5e.Helpers
                 sizeSelectList.Add(item);
             }
 
-            sizeSelectList.Insert(0, new SelectListItem { Value = "0", Text = "Select a size", Selected = true });
+            sizeSelectList.Insert(0, new SelectListItem { Value = "0", Text = "Select a size...", Selected = true });
 
             return sizeSelectList;
         }
@@ -50,7 +50,7 @@ namespace MonsterManual5e.Helpers
                 typeSelectList.Add(item);
             }
 
-            typeSelectList.Insert(0, new SelectListItem { Value = "0", Text = "Select a type", Selected = true });
+            typeSelectList.Insert(0, new SelectListItem { Value = "0", Text = "Select a type...", Selected = true });
 
             return typeSelectList;
         }
@@ -69,9 +69,35 @@ namespace MonsterManual5e.Helpers
                 alignmentSelectList.Add(item);
             }
 
-            alignmentSelectList.Insert(0, new SelectListItem { Value = "0", Text = "Select an alignment", Selected = true });
+            alignmentSelectList.Insert(0, new SelectListItem { Value = "0", Text = "Select an alignment...", Selected = true });
 
             return alignmentSelectList;
+        }
+
+        public static IEnumerable<SelectListItem> GetSenses()
+        {
+            List<SelectListItem> senseSelectList = new List<SelectListItem>();
+            List<Sense> senseList = mrepo.GetAllSenses().ToList();
+            foreach (Sense x in senseList)
+            {
+                SelectListItem item = new SelectListItem { Value = x.Id.ToString(), Text = x.Name };
+                senseSelectList.Add(item);
+            }
+
+            return senseSelectList;
+        }
+
+        public static IEnumerable<SelectListItem> GetSkills()
+        {
+            List<SelectListItem> skillSelectList = new List<SelectListItem>();
+            List<Skill> skillList = mrepo.GetAllSkills().ToList();
+            foreach (Skill x in skillList)
+            {
+                SelectListItem item = new SelectListItem { Value = x.Id.ToString(), Text = x.Name };
+                skillSelectList.Add(item);
+            }
+
+            return skillSelectList;
         }
     }
 }

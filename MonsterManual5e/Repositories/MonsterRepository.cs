@@ -66,5 +66,25 @@ namespace MonsterManual5e.Repositories
             }
         }
         #endregion
+
+        #region Senses
+        public IEnumerable<Sense> GetAllSenses()
+        {
+            using (var context = new DndMonstercontext())
+            {
+                return context.Senses.ToList();
+            }
+        }
+        #endregion
+
+        #region Skills
+        public IEnumerable<Skill> GetAllSkills()
+        {
+            using (var context = new DndMonstercontext())
+            {
+                return context.Skills.ToList();
+            }
+        }
+        #endregion
     }
 }
