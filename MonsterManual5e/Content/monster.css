@@ -27,7 +27,8 @@ body {
 }
 
 /* Make compatible with fixed-to-top navbar */
-body > .container {
+body > .container,
+body > .container-fluid {
   padding: 60px 15px 0;
 }
 
@@ -45,4 +46,12 @@ body > .container {
 
 .navbar-padding {
   margin: 100px;
+}
+
+/* ----------------------------------------------- */
+/* Custom datatables styles
+-------------------------------------------------- */
+
+.dataTables_filter {
+  display: none;
 }

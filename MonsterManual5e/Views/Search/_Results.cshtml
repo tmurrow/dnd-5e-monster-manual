@@ -1,0 +1,70 @@
+﻿@model MonsterManual5e.ViewModels.SearchViewModel
+
+<div id="monster-results">
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Type</th>
+                @*<th>Alignment</th>*@
+                <th>AC</th>
+                <th>HP</th>
+                <th>Str</th>
+                <th>Dex</th>
+                <th>Con</th>
+                <th>Int</th>
+                <th>Wis</th>
+                <th>Cha</th>
+                <th>Str Save</th>
+                <th>Dex Save</th>
+                <th>Con Save</th>
+                <th>Int Save</th>
+                <th>Wis Save</th>
+                <th>Cha Save</th>
+                <th>Passive Perception</th>
+                <th>CR</th>
+                <th>XP</th>
+                <th>VIEW</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Monsters != null && Model.Monsters.Count != 0)
+            {
+                foreach (var monster in Model.Monsters)
+                {
+                    <tr>
+                        <td>@monster.Name</td>
+                        <td>@monster.Size.Name</td>
+                        <td>@monster.MonsterType.Name</td>
+                        @*<td>@monster.Alignment</td>*@
+                        <td>@monster.Ac</td>
+                        <td>@monster.Hp</td>
+                        <td>@monster.Str</td>
+                        <td>@monster.Dex</td>
+                        <td>@monster.Con</td>
+                        <td>@monster.Int</td>
+                        <td>@monster.Wis</td>
+                        <td>@monster.Cha</td>
+                        <td>@monster.StrSave.ToString("+0;-0;0")</td>
+                        <td>@monster.DexSave.ToString("+0;-0;0")</td>
+                        <td>@monster.ConSave.ToString("+0;-0;0")</td>
+                        <td>@monster.IntSave.ToString("+0;-0;0")</td>
+                        <td>@monster.WisSave.ToString("+0;-0;0")</td>
+                        <td>@monster.ChaSave.ToString("+0;-0;0")</td>
+                        <td>@monster.PassivePerception</td>
+                        <td>@monster.ChallengeRating</td>
+                        <td>@monster.ExperiencePoints</td>
+                        <td>@Html.ActionLink("View", "Info", "Monster", new { id = monster.Id }, null)</td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="21">No results to show</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

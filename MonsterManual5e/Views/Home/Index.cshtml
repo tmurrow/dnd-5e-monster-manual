@@ -6,58 +6,92 @@
 <div class="page-header">
     <h1>Monster Manual</h1>
 </div>
-<table class="table table-hover table-striped table-bordered">
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Size</th>
-            <th>Type</th>
-            @*<th>Alignment</th>*@
-            <th>AC</th>
-            <th>HP</th>
-            <th>Str</th>
-            <th>Dex</th>
-            <th>Con</th>
-            <th>Int</th>
-            <th>Wis</th>
-            <th>Cha</th>
-            <th>Str Save</th>
-            <th>Dex Save</th>
-            <th>Con Save</th>
-            <th>Int Save</th>
-            <th>Wis Save</th>
-            <th>Cha Save</th>
-            <th>Passive Perception</th>
-            <th>CR</th>
-            <th>XP</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var monster in Model.Monsters)
-        {
-            <tr>
-                <td>@monster.Name</td>
-                <td>@monster.Size.Name</td>
-                <td>@monster.MonsterType.Name</td>
-                @*<td>@monster.Alignment</td>*@
-                <td>@monster.Ac</td>
-                <td>@monster.Hp</td>
-                <td>@monster.Str</td>
-                <td>@monster.Dex</td>
-                <td>@monster.Con</td>
-                <td>@monster.Int</td>
-                <td>@monster.Wis</td>
-                <td>@monster.Cha</td>
-                <td>@monster.StrSave.ToString("+0;-0;0")</td>
-                <td>@monster.DexSave.ToString("+0;-0;0")</td>
-                <td>@monster.ConSave.ToString("+0;-0;0")</td>
-                <td>@monster.IntSave.ToString("+0;-0;0")</td>
-                <td>@monster.WisSave.ToString("+0;-0;0")</td>
-                <td>@monster.ChaSave.ToString("+0;-0;0")</td>
-                <td>@monster.PassivePerception</td>
-                <td>@monster.ChallengeRating</td>
-                <td>@monster.ExperiencePoints</td>
-            </tr>
-        }
-    </tbody>
-</table>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="search">
+
+            <div class="row">
+                <div class="col-md-2">
+                    <input type="text" class="form-control filter-input" data-filter="name" placeholder="Search by name..." />
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control filter-input" data-filter="size" placeholder="Search by size..." />
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control filter-input" data-filter="type" placeholder="Search by type..." />
+                </div>
+                <div class="col-md-6">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-default filter-col-visibility" data-col-show="default">Default</button>
+                        <button type="button" class="btn btn-default">Middle</button>
+                        <button type="button" class="btn btn-default filter-col-visibility" data-col-show="ability">Ability Scores</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <table id="monster-table" class="table table-hover table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th class="vg-default vg-ability" data-column="name">Name</th>
+                    <th class="vg-default" data-column="size">Size</th>
+                    <th class="vg-default" data-column="type">Type</th>
+                    @*<th>Alignment</th>*@
+                    <th class="vg-default" >AC</th>
+                    <th class="vg-default" >HP</th>
+                    <th class="vg-ability" >Str</th>
+                    <th class="vg-ability" >Dex</th>
+                    <th class="vg-ability" >Con</th>
+                    <th class="vg-ability" >Int</th>
+                    <th class="vg-ability" >Wis</th>
+                    <th class="vg-ability" >Cha</th>
+                    <th class="vg-ability" >Str Save</th>
+                    <th class="vg-ability" >Dex Save</th>
+                    <th class="vg-ability" >Con Save</th>
+                    <th class="vg-ability" >Int Save</th>
+                    <th class="vg-ability" >Wis Save</th>
+                    <th class="vg-ability" >Cha Save</th>
+                    <th class="vg-default" >Passive Perception</th>
+                    <th class="vg-default" >CR</th>
+                    <th class="vg-default" >XP</th>
+                    <th class="vg-default" >VIEW</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var monster in Model.Monsters)
+                {
+                    <tr>
+                        <td>@monster.Name</td>
+                        <td>@monster.Size.Name</td>
+                        <td>@monster.MonsterType.Name</td>
+                        @*<td>@monster.Alignment</td>*@
+                        <td>@monster.Ac</td>
+                        <td>@monster.Hp</td>
+                        <td>@monster.Str</td>
+                        <td>@monster.Dex</td>
+                        <td>@monster.Con</td>
+                        <td>@monster.Int</td>
+                        <td>@monster.Wis</td>
+                        <td>@monster.Cha</td>
+                        <td>@monster.StrSave.ToString("+0;-0;0")</td>
+                        <td>@monster.DexSave.ToString("+0;-0;0")</td>
+                        <td>@monster.ConSave.ToString("+0;-0;0")</td>
+                        <td>@monster.IntSave.ToString("+0;-0;0")</td>
+                        <td>@monster.WisSave.ToString("+0;-0;0")</td>
+                        <td>@monster.ChaSave.ToString("+0;-0;0")</td>
+                        <td>@monster.PassivePerception</td>
+                        <td>@monster.ChallengeRating</td>
+                        <td>@monster.ExperiencePoints</td>
+                        <td>@Html.ActionLink("View", "Info", "Monster", new { id = monster.Id }, null)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

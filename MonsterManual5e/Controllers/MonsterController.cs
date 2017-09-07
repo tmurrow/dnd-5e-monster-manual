@@ -33,5 +33,24 @@ namespace MonsterManual5e.Controllers
 
             return View(vm);
         }
+
+        public ActionResult Info(int id)
+        {
+            MonsterViewModel vm = new MonsterViewModel();
+            vm.Monster = mrepo.GetMonsterById(id);
+            vm.Languages = SelectListBuilder.GetLanguages().ToList();
+            vm.Sizes = SelectListBuilder.GetSizes().ToList();
+            vm.Types = SelectListBuilder.GetTypes().ToList();
+            vm.Alignments = SelectListBuilder.GetAlignments().ToList();
+            vm.Senses = SelectListBuilder.GetSenses().ToList();
+            vm.Skills = SelectListBuilder.GetSkills().ToList();
+
+            return View(vm);
+        }
+
+        public string GetAlignmentName(string a, string m)
+        {
+            return AlignmentBuilder.GetAlignment(a, m);
+        }
     }
 }

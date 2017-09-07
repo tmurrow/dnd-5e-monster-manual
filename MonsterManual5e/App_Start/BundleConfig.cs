@@ -15,8 +15,11 @@ namespace MonsterManual5e
                         "~/Scripts/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                        "~/Scripts/select2.js",
-                        "~/Scripts/monster.js"));
+                "~/Scripts/jquery.unobtrusive-ajax.js",        
+                "~/Scripts/select2.js",
+                "~/Scripts/DataTables/jquery.dataTables.js",
+                "~/Scripts/DataTables/dataTables.bootstrap.js",
+                "~/Scripts/monster.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
@@ -31,6 +34,8 @@ namespace MonsterManual5e
                       "~/Content/bootstrap.css",
                       "~/Content/select2.css",
                       "~/Content/select2-bootstrap.css",
+                      //"~/Content/DataTables/css/jquery.dataTables.css",
+                      "~/Content/DataTables/css/dataTables.bootstrap.css",
                       "~/Content/monster.css"));
 
 

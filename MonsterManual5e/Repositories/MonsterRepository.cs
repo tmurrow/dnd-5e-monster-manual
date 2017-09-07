@@ -17,6 +17,22 @@ namespace MonsterManual5e.Repositories
                 return context.Monsters.Include("Size").Include("MonsterType").Include("AlignmentAttitude").Include("AlignmentMorality").ToList();
             }
         }
+
+        public Monster GetMonsterById(int id)
+        {
+            using (var context = new DndMonstercontext())
+            {
+                return context.Monsters.Where(m => m.Id == id).Include("Size").Include("MonsterType").Include("AlignmentAttitude").Include("AlignmentMorality").SingleOrDefault();
+            }
+        }
+
+        public Monster GetMonsterByName(string name)
+        {
+            using (var context = new DndMonstercontext())
+            {
+                return context.Monsters.Where(m => m.Name.Equals(name)).SingleOrDefault();
+            }
+        }
         #endregion
 
         #region Alignments

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using MonsterManual5e.Helpers;
 
 namespace MonsterManual5e.Models
 {
@@ -30,33 +31,11 @@ namespace MonsterManual5e.Models
         public int TypeId { get; set; }
 
         [NotMapped]
-        public string Alignment { get; set; }
+        public Alignment Alignment { get; set; }
         //{
         //    get
         //    {
-        //        string alignmentOutput;
-        //        if (AlignmentAttitude.Name.Equals("any") && AlignmentMorality.Name.Equals("any"))
-        //        {
-        //            alignmentOutput = "Any alignment";
-        //        }
-        //        else if (AlignmentAttitude.Name.Equals("any"))
-        //        {
-        //            alignmentOutput = "Any " + AlignmentMorality.Name;
-        //        }
-        //        else if (AlignmentMorality.Name.Equals("any"))
-        //        {
-        //            alignmentOutput = "Any " + AlignmentAttitude.Name;
-        //        }
-        //        else if (AlignmentAttitude.Name.Equals("none") || AlignmentMorality.Name.Equals("none"))
-        //        {
-        //            alignmentOutput = "Unaligned";
-        //        }
-        //        else
-        //        {
-        //            alignmentOutput = AlignmentAttitude.Name + " " + AlignmentMorality;
-        //        }
-
-        //        return AlignmentAttitude.Name + " " + AlignmentMorality.Name;
+        //        return AlignmentBuilder.GetAlignment(AlignmentAttitude, AlignmentMorality);
         //    }
         //    set { }
         //}
