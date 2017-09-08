@@ -9,8 +9,13 @@
 
 <div class="row">
     <div class="col-md-12">
-        <div class="search">
 
+        <ul class="nav nav-tabs">
+            <li role="presentation" class="filter-col-visibility active" data-col-show="default"><a href="#">Default</a></li>
+            <li role="presentation" class="filter-col-visibility" data-col-show="ability"><a href="#">Ability Scores</a></li>
+        </ul>
+
+        <div class="filter filter-default">
             <div class="row">
                 <div class="col-md-2">
                     <input type="text" class="form-control filter-input" data-filter="name" placeholder="Search by name..." />
@@ -22,24 +27,33 @@
                     <input type="text" class="form-control filter-input" data-filter="type" placeholder="Search by type..." />
                 </div>
                 <div class="col-md-6">
-                    <div class="btn-group" role="group">
-                        <button type="button" class="btn btn-default filter-col-visibility" data-col-show="default">Default</button>
-                        <button type="button" class="btn btn-default">Middle</button>
-                        <button type="button" class="btn btn-default filter-col-visibility" data-col-show="ability">Ability Scores</button>
-                    </div>
+                    <div class="input-range">
+                        <input id="filter-min-ac" type="number" class="form-control input-range-left minimum" placeholder="Minimum AC..." />
+                        <span class="input-range-mid">to</span>
+                        <input id="filter-max-ac" type="number" class="form-control input-range-right maximum" placeholder="Maximum AC..." />
+                    </div>            
                 </div>
             </div>
+        </div>
 
+        <div class="filter filter-ability hidden">
+            <div class="row">
+                <div class="col-md-2">
+                    
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <button class="btn btn-default">Clear all filters</button>
         </div>
     </div>
 </div>
-<hr />
 <div class="row">
     <div class="col-md-12">
-        <table id="monster-table" class="table table-hover table-striped table-bordered">
+        <table id="monster-table" class="table table-hover table-striped table-bordered" width="100%">
             <thead>
                 <tr>
-                    <th class="vg-default vg-ability" data-column="name">Name</th>
+                    <th class="vg-all" data-column="name">Name</th>
                     <th class="vg-default" data-column="size">Size</th>
                     <th class="vg-default" data-column="type">Type</th>
                     @*<th>Alignment</th>*@
@@ -60,7 +74,7 @@
                     <th class="vg-default" >Passive Perception</th>
                     <th class="vg-default" >CR</th>
                     <th class="vg-default" >XP</th>
-                    <th class="vg-default" >VIEW</th>
+                    <th class="vg-all" >View</th>
                 </tr>
             </thead>
             <tbody>

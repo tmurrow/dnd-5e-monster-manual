@@ -1,4 +1,51 @@
 ﻿/* ----------------------------------------------- */
+/* Search/filter styles
+-------------------------------------------------- */
+.filter {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.input-range {
+  display: table;
+  width: 100%;
+}
+
+.input-range-left,
+.input-range-right {
+  display: table-cell;
+}
+
+.input-range-left {
+  margin-right: 0;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.input-range-right {
+  margin-left: 0;
+  border-left: none;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.input-range-mid {
+  display: table-cell;
+  width: 1%;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1;
+  color: #555;
+  text-align: center;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+/* ----------------------------------------------- */
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -55,3 +102,4 @@ body > .container-fluid {
 .dataTables_filter {
   display: none;
 }
+

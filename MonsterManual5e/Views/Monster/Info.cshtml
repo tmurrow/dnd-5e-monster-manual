@@ -8,7 +8,7 @@
 </div>
 
 <form>
-
+    @Html.HiddenFor(m => m.Monster.Id)
     <div class="form-group">
         @Html.LabelFor(m => m.Monster.Name, htmlAttributes: new { @class = "control-label" })
         <p class="form-control-static">@Model.Monster.Name</p>
