@@ -41,6 +41,11 @@
         }
     });
 
+    $('.filter-clear').click(function () {
+        $('.filter-input').val("");
+        $('.filter-input').change();
+    });
+
     $('.filter-col-visibility').click(function (e) {
 
         e.preventDefault();
