@@ -74,14 +74,13 @@
                     <th class="vg-default" >Passive Perception</th>
                     <th class="vg-default" >CR</th>
                     <th class="vg-default" >XP</th>
-                    <th class="vg-all" >View</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var monster in Model.Monsters)
                 {
                     <tr>
-                        <td>@monster.Name</td>
+                        <td>@Html.ActionLink(monster.Name, "Info", "Monster", new { id = monster.Id }, null)</td>
                         <td>@monster.Size.Name</td>
                         <td>@monster.MonsterType.Name</td>
                         @*<td>@monster.Alignment</td>*@
@@ -102,7 +101,6 @@
                         <td>@monster.PassivePerception</td>
                         <td>@monster.ChallengeRating</td>
                         <td>@monster.ExperiencePoints</td>
-                        <td>@Html.ActionLink("View", "Info", "Monster", new { id = monster.Id }, null)</td>
                     </tr>
                 }
             </tbody>

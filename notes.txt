@@ -1,0 +1,8 @@
+mm app
+
+encounter builder
+trait/ability/attack table
+field for shorthand/display descriptions
+same as full description but when using encounter builder it pulls up in an editable input field and can then be changed and saved
+
+add fields: source book, page

@@ -2,7 +2,7 @@
 
     // DataTables variables
 
-    var COLS = ["Name", "Size", "Type", "AC", "HP", "Str", "Dex", "Con", "Int", "Wis", "Cha", "Str Save", "Dex Save", "Con Save", "Int Save", "Wis Save", "Cha Save", "Passive Perception", "CR", "XP", "View"];
+    var COLS = ["Name", "Size", "Type", "AC", "HP", "Str", "Dex", "Con", "Int", "Wis", "Cha", "Str Save", "Dex Save", "Con Save", "Int Save", "Wis Save", "Cha Save", "Passive Perception", "CR", "XP"];
     var HIDDENCOLUMNS = ["Str", "Dex", "Con", "Int", "Wis", "Cha", "Str Save", "Dex Save", "Con Save", "Int Save", "Wis Save", "Cha Save", "Passive Perception"];
     var hiddenColumnsIndexes = new Array();
 
@@ -22,12 +22,7 @@
                 "targets": hiddenColumnsIndexes,
                 "visible": false,
                 "searchable": false
-            },
-            {
-                "targets": [COLS.indexOf("View")],
-                "orderable": false
             }
-
         ]
     });
 
