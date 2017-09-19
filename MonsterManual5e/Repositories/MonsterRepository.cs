@@ -14,7 +14,7 @@ namespace MonsterManual5e.Repositories
         {
             using (var context = new DndMonstercontext())
             {
-                return context.Monsters.Include("Size").Include("MonsterType").Include("AlignmentAttitude").Include("AlignmentMorality").ToList();
+                return context.Monsters.Include("Size").Include("MonsterType").Include("AlignmentAttitude").Include("AlignmentMorality").Include("Source").ToList();
             }
         }
 
@@ -22,7 +22,7 @@ namespace MonsterManual5e.Repositories
         {
             using (var context = new DndMonstercontext())
             {
-                return context.Monsters.Where(m => m.Id == id).Include("Size").Include("MonsterType").Include("AlignmentAttitude").Include("AlignmentMorality").SingleOrDefault();
+                return context.Monsters.Where(m => m.Id == id).Include("Size").Include("MonsterType").Include("AlignmentAttitude").Include("AlignmentMorality").Include("Source").SingleOrDefault();
             }
         }
 

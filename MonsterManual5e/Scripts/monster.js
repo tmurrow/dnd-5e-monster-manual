@@ -8,7 +8,7 @@
     });
 
     $('.multi-select').select2({
-        closeOnSelect: false,
+        //closeOnSelect: false,
         placeholder: 'Select one or more options...'
     });
 

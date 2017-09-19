@@ -175,6 +175,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AlignmentBuilder.cs" />
+    <Compile Include="Helpers\DisplayHelper.cs" />
     <Compile Include="Helpers\SelectListBuilder.cs" />
     <Compile Include="Models\ability_score.cs" />
     <Compile Include="Models\affect_type.cs" />
@@ -199,6 +200,7 @@
     <Compile Include="Models\Mapping\senseMap.cs" />
     <Compile Include="Models\Mapping\sizeMap.cs" />
     <Compile Include="Models\Mapping\skillMap.cs" />
+    <Compile Include="Models\Mapping\sourceMap.cs" />
     <Compile Include="Models\Mapping\speedMap.cs" />
     <Compile Include="Models\Mapping\tagMap.cs" />
     <Compile Include="Models\Mapping\xref_monster_damage_typeMap.cs" />
@@ -212,6 +214,7 @@
     <Compile Include="Models\sense.cs" />
     <Compile Include="Models\size.cs" />
     <Compile Include="Models\skill.cs" />
+    <Compile Include="Models\source.cs" />
     <Compile Include="Models\speed.cs" />
     <Compile Include="Models\tag.cs" />
     <Compile Include="Models\xref_monster_damage_type.cs" />

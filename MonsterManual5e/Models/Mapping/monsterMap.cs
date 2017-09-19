@@ -53,6 +53,8 @@ namespace MonsterManual5e.Models.Mapping
             this.Property(t => t.ChallengeRating).HasColumnName("challenge_rating");
             this.Property(t => t.ExperiencePoints).HasColumnName("experience_points");
             this.Property(t => t.TelepathyDistance).HasColumnName("telepathy_distance");
+            this.Property(t => t.SourceId).HasColumnName("source_id");
+            this.Property(t => t.SourcePage).HasColumnName("source_page");
 
             // Relationships
             this.HasMany(t => t.Tags)
@@ -73,6 +75,9 @@ namespace MonsterManual5e.Models.Mapping
             this.HasRequired(t => t.Size)
                 .WithMany(t => t.Monsters)
                 .HasForeignKey(d => d.SizeId);
+            this.HasRequired(t => t.Source)
+                .WithMany(t => t.Monsters)
+                .HasForeignKey(d => d.SourceId);
             this.HasRequired(t => t.MonsterType)
                 .WithMany(t => t.Monsters)
                 .HasForeignKey(d => d.TypeId);

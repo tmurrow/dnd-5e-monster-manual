@@ -2,7 +2,7 @@
 
     // DataTables variables
 
-    var COLS = ["Name", "Size", "Type", "AC", "HP", "Str", "Dex", "Con", "Int", "Wis", "Cha", "Str Save", "Dex Save", "Con Save", "Int Save", "Wis Save", "Cha Save", "Passive Perception", "CR", "XP"];
+    var COLS = ["Name", "Size", "Type", "AC", "HP", "Str", "Dex", "Con", "Int", "Wis", "Cha", "Str Save", "Dex Save", "Con Save", "Int Save", "Wis Save", "Cha Save", "Passive Perception", "CR", "CR Hidden", "XP", "Source"];
     var HIDDENCOLUMNS = ["Str", "Dex", "Con", "Int", "Wis", "Cha", "Str Save", "Dex Save", "Con Save", "Int Save", "Wis Save", "Cha Save", "Passive Perception"];
     var hiddenColumnsIndexes = new Array();
 
@@ -22,12 +22,21 @@
                 "targets": hiddenColumnsIndexes,
                 "visible": false,
                 "searchable": false
+            },
+            {
+                "targets": COLS.indexOf("CR"),
+                "orderData": COLS.indexOf("CR Hidden")
+            },
+            {
+                "targets": COLS.indexOf("CR Hidden"),
+                "visible": false
             }
         ]
     });
 
     // DataTables events
 
+    // Filter input search on type
     $('.filter-input').on('keyup change', function () {
         var filter = $(this).data('filter');
         var col = monsterTable.column('[data-column="' + filter + '"]');
@@ -36,6 +45,24 @@
         }
     });
 
+    $('.filter-select').on('change', function () {
+        var options = $('#size-select option:selected');
+        var col = monsterTable.column(COLS.indexOf("Size"));
+        var input = "";
+        options.each(function (index) {
+            if (index === options.length - 1)
+            {
+                input += $(this).text();
+            }
+            else
+            {
+                input += $(this).text() + '|';
+            }            
+        });
+        col.search(input, true, false).draw();
+    });
+
+    // Clear all filters
     $('.filter-clear').click(function () {
         $('.filter-input').val("");
         $('.filter-input').change();

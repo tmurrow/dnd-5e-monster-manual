@@ -9,8 +9,6 @@ namespace MonsterManual5e.Models
 
         public int LanguageId { get; set; }
 
-        public int TelepathyDistance { get; set; }
-
         public sbyte Speak { get; set; }
 
         public sbyte CommandsOnly { get; set; }

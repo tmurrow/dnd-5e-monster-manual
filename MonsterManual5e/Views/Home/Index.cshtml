@@ -1,4 +1,5 @@
-﻿@model MonsterManual5e.ViewModels.ListViewModel
+﻿@using MonsterManual5e.Helpers;
+@model MonsterManual5e.ViewModels.ListViewModel
 @{
     ViewBag.Title = "Home Page";
 }
@@ -32,6 +33,12 @@
                         <span class="input-range-mid">to</span>
                         <input id="filter-max-ac" type="number" class="form-control filter-input input-range-right maximum" placeholder="Maximum AC..." />
                     </div>            
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    @*<select class="form-control multi-select filter-select" data-filter="size-select"></select>*@
+                    @Html.ListBoxFor(m => m.SelectedSizes, Model.Sizes, htmlAttributes: new { @class = "form-control multi-select filter-select", @id = "size-select"})
                 </div>
             </div>
         </div>
@@ -73,7 +80,9 @@
                     <th class="vg-ability" >Cha Save</th>
                     <th class="vg-default" >Passive Perception</th>
                     <th class="vg-default" >CR</th>
+                    <th class="vg-none">CR Hidden</th>
                     <th class="vg-default" >XP</th>
+                    <th class="vg-default">Source</th>
                 </tr>
             </thead>
             <tbody>
@@ -99,8 +108,10 @@
                         <td>@monster.WisSave.ToString("+0;-0;0")</td>
                         <td>@monster.ChaSave.ToString("+0;-0;0")</td>
                         <td>@monster.PassivePerception</td>
+                        <td>@Html.Raw(DisplayHelper.DisplayCR(monster.ChallengeRating))</td>
                         <td>@monster.ChallengeRating</td>
                         <td>@monster.ExperiencePoints</td>
+                        <td>@monster.Source.Abbreviation @monster.SourcePage</td>
                     </tr>
                 }
             </tbody>

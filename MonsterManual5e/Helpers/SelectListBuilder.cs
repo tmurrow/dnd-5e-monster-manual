@@ -12,19 +12,7 @@ namespace MonsterManual5e.Helpers
     {
         private static MonsterRepository mrepo = new MonsterRepository();
 
-        public static IEnumerable<SelectListItem> GetLanguages()
-        {
-            List<SelectListItem> languageSelectList = new List<SelectListItem>();
-            List<Language> languageList = mrepo.GetAllLanguages().ToList();
-            foreach (Language x in languageList)
-            {
-                SelectListItem item = new SelectListItem { Value = x.Id.ToString(), Text = x.Name };
-                languageSelectList.Add(item);
-            }
-
-            return languageSelectList;
-        }
-
+        #region Single Selects
         public static IEnumerable<SelectListItem> GetSizes()
         {
             List<SelectListItem> sizeSelectList = new List<SelectListItem>();
@@ -62,7 +50,7 @@ namespace MonsterManual5e.Helpers
             List<AlignmentMorality> alignmentMoralityList = mrepo.GetAllAlignmentMoralities().ToList();
             List<Alignment> alignmentList = AlignmentBuilder.GetAllAlignments();
             alignmentList = alignmentList.OrderBy(a => a.Order).ToList();
-                        
+
             foreach (Alignment x in alignmentList)
             {
                 SelectListItem item = new SelectListItem { Value = x.Order.ToString(), Text = x.Name };
@@ -72,6 +60,34 @@ namespace MonsterManual5e.Helpers
             alignmentSelectList.Insert(0, new SelectListItem { Value = "0", Text = "Select an alignment...", Selected = true });
 
             return alignmentSelectList;
+        }
+        #endregion
+
+        #region Multi Selects
+        public static IEnumerable<SelectListItem> GetSizesMulti()
+        {
+            List<SelectListItem> sizeSelectList = new List<SelectListItem>();
+            List<Size> sizeList = mrepo.GetAllSizes().ToList();
+            foreach (Size x in sizeList)
+            {
+                SelectListItem item = new SelectListItem { Value = x.Id.ToString(), Text = x.Name };
+                sizeSelectList.Add(item);
+            }
+
+            return sizeSelectList;
+        }
+
+        public static IEnumerable<SelectListItem> GetLanguages()
+        {
+            List<SelectListItem> languageSelectList = new List<SelectListItem>();
+            List<Language> languageList = mrepo.GetAllLanguages().ToList();
+            foreach (Language x in languageList)
+            {
+                SelectListItem item = new SelectListItem { Value = x.Id.ToString(), Text = x.Name };
+                languageSelectList.Add(item);
+            }
+
+            return languageSelectList;
         }
 
         public static IEnumerable<SelectListItem> GetSenses()
@@ -99,5 +115,6 @@ namespace MonsterManual5e.Helpers
 
             return skillSelectList;
         }
+        #endregion
     }
 }

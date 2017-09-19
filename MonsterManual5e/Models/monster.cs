@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using MonsterManual5e.Helpers;
 
 namespace MonsterManual5e.Models
 {
@@ -32,13 +31,6 @@ namespace MonsterManual5e.Models
 
         [NotMapped]
         public Alignment Alignment { get; set; }
-        //{
-        //    get
-        //    {
-        //        return AlignmentBuilder.GetAlignment(AlignmentAttitude, AlignmentMorality);
-        //    }
-        //    set { }
-        //}
 
         public int AlignmentAttitudeId { get; set; }
 
@@ -86,6 +78,10 @@ namespace MonsterManual5e.Models
 
         public int TelepathyDistance { get; set; }
 
+        public int SourceId { get; set; }
+
+        public int SourcePage { get; set; }
+
         public virtual AlignmentAttitude AlignmentAttitude { get; set; }
 
         public virtual AlignmentMorality AlignmentMorality { get; set; }
@@ -103,6 +99,8 @@ namespace MonsterManual5e.Models
         public virtual ICollection<XrefMonsterSpeed> XrefMonsterSpeed { get; set; }
 
         public virtual Size Size { get; set; }
+
+        public virtual Source Source { get; set; }
 
         public virtual MonsterType MonsterType { get; set; }
 

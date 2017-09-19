@@ -43,6 +43,8 @@ namespace MonsterManual5e.Models
 
         public DbSet<Skill> Skills { get; set; }
 
+        public DbSet<Source> Sources { get; set; }
+
         public DbSet<Speed> Speeds { get; set; }
 
         public DbSet<Tag> Tags { get; set; }
@@ -74,6 +76,7 @@ namespace MonsterManual5e.Models
             modelBuilder.Configurations.Add(new SenseMap());
             modelBuilder.Configurations.Add(new SizeMap());
             modelBuilder.Configurations.Add(new SkillMap());
+            modelBuilder.Configurations.Add(new SourceMap());
             modelBuilder.Configurations.Add(new SpeedMap());
             modelBuilder.Configurations.Add(new TagMap());
             modelBuilder.Configurations.Add(new XrefMonsterDamageTypeMap());

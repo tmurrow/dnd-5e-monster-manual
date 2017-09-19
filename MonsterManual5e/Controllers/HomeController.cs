@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using MonsterManual5e.Models;
 using MonsterManual5e.ViewModels;
 using MonsterManual5e.Repositories;
+using MonsterManual5e.Helpers;
 
 namespace MonsterManual5e.Controllers
 {
@@ -17,7 +18,8 @@ namespace MonsterManual5e.Controllers
         {
             ListViewModel vm = new ListViewModel();
             vm.Monsters = mrepo.GetAllMonsters().ToList();
-
+            vm.Sizes = SelectListBuilder.GetSizesMulti().ToList();
+            vm.Types = SelectListBuilder.GetTypes().ToList();
             return View(vm);
         }
 
