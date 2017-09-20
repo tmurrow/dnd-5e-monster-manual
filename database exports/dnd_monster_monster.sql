@@ -25,6 +25,7 @@ DROP TABLE IF EXISTS `monster`;
 CREATE TABLE `monster` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(63) NOT NULL,
+  `url_name` varchar(63) NOT NULL,
   `size_id` int(11) NOT NULL,
   `type_id` int(11) NOT NULL,
   `alignment_attitude_id` int(11) NOT NULL,
@@ -55,6 +56,7 @@ CREATE TABLE `monster` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`),
   UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `url_name_UNIQUE` (`url_name`),
   KEY `alignment_attitude_id_idx` (`alignment_attitude_id`),
   KEY `alignment_morality_id_idx` (`alignment_morality_id`),
   KEY `size_id_idx` (`size_id`),
@@ -75,7 +77,7 @@ CREATE TABLE `monster` (
 
 LOCK TABLES `monster` WRITE;
 /*!40000 ALTER TABLE `monster` DISABLE KEYS */;
-INSERT INTO `monster` VALUES (1,'Aarakocra',3,10,2,1,12,NULL,13,'3d8',10,14,10,11,12,11,0,2,0,0,1,0,15,NULL,0.25,50,0,1,12),(2,'Aboleth',4,1,1,3,17,'natural armor',135,'18d10+36',21,9,15,18,15,18,5,-1,6,8,6,4,20,NULL,10,5900,0,1,13),(3,'Deva',3,3,1,1,17,'natural armor',136,'16d+64',18,18,18,17,20,20,4,4,4,3,9,9,15,NULL,10,5900,120,1,16),(4,'Planetar',4,3,1,1,19,'natural armor',200,'16d10+112',24,20,24,19,22,25,7,5,12,4,11,12,21,NULL,16,15000,120,1,17),(5,'Solar',4,3,1,1,21,'natural armor',243,'18d10+144',26,22,26,25,25,30,8,6,8,14,14,17,24,NULL,21,33000,120,1,18),(6,'Animated Armor',3,4,5,5,18,'natural armor',33,'6d8+6',14,11,13,1,3,1,2,0,1,-5,-4,-5,6,NULL,1,200,0,1,19),(7,'Flying Sword',2,4,5,5,17,'natural armor',17,'5d6',12,15,11,1,5,1,1,4,0,-5,-3,-5,7,NULL,0.25,50,0,1,20),(8,'Rug of Smothering',4,4,5,5,12,NULL,33,'6d10',17,14,10,1,3,1,3,2,0,-5,-4,-5,6,NULL,2,450,0,1,20),(9,'Ankheg',4,11,5,5,14,'natural armor, 11 while prone',39,'6d10+6',17,11,13,1,13,6,3,0,1,-5,1,-2,11,NULL,2,450,0,1,21),(10,'Azer',3,6,1,2,17,'natural armor, shield',39,'6d8+12',17,12,15,12,13,10,3,1,4,1,1,0,11,NULL,2,450,0,1,22);
+INSERT INTO `monster` VALUES (1,'Aarakocra','Aarakocra',3,10,2,1,12,NULL,13,'3d8',10,14,10,11,12,11,0,2,0,0,1,0,15,NULL,0.25,50,0,1,12),(2,'Aboleth','Aboleth',4,1,1,3,17,'natural armor',135,'18d10+36',21,9,15,18,15,18,5,-1,6,8,6,4,20,NULL,10,5900,0,1,13),(3,'Deva','Deva',3,3,1,1,17,'natural armor',136,'16d+64',18,18,18,17,20,20,4,4,4,3,9,9,15,NULL,10,5900,120,1,16),(4,'Planetar','Planetar',4,3,1,1,19,'natural armor',200,'16d10+112',24,20,24,19,22,25,7,5,12,4,11,12,21,NULL,16,15000,120,1,17),(5,'Solar','Solar',4,3,1,1,21,'natural armor',243,'18d10+144',26,22,26,25,25,30,8,6,8,14,14,17,24,NULL,21,33000,120,1,18),(6,'Animated Armor','Animated_Armor',3,4,5,5,18,'natural armor',33,'6d8+6',14,11,13,1,3,1,2,0,1,-5,-4,-5,6,NULL,1,200,0,1,19),(7,'Flying Sword','Flying_Sword',2,4,5,5,17,'natural armor',17,'5d6',12,15,11,1,5,1,1,4,0,-5,-3,-5,7,NULL,0.25,50,0,1,20),(8,'Rug of Smothering','Rug_of_Smothering',4,4,5,5,12,NULL,33,'6d10',17,14,10,1,3,1,3,2,0,-5,-4,-5,6,NULL,2,450,0,1,20),(9,'Ankheg','Ankheg',4,11,5,5,14,'natural armor, 11 while prone',39,'6d10+6',17,11,13,1,13,6,3,0,1,-5,1,-2,11,NULL,2,450,0,1,21),(10,'Azer','Azer',3,6,1,2,17,'natural armor, shield',39,'6d8+12',17,12,15,12,13,10,3,1,4,1,1,0,11,NULL,2,450,0,1,22);
 /*!40000 ALTER TABLE `monster` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -88,4 +90,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-19 16:09:32
+-- Dump completed on 2017-09-20 16:07:05
