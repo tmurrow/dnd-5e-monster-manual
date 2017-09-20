@@ -58,7 +58,6 @@ c:\users\tanya murrow\documents\visual studio 2015\Projects\MonsterManual5e\Mons
 c:\users\tanya murrow\documents\visual studio 2015\Projects\MonsterManual5e\MonsterManual5e\obj\Debug\MonsterManual5e.csprojResolveAssemblyReference.cache
 c:\users\tanya murrow\documents\visual studio 2015\Projects\MonsterManual5e\MonsterManual5e\obj\Debug\MonsterManual5e.dll
 c:\users\tanya murrow\documents\visual studio 2015\Projects\MonsterManual5e\MonsterManual5e\obj\Debug\MonsterManual5e.pdb
-C:\Users\tnthomp1\Documents\Websites Github\dnd-5e-monster-manual\MonsterManual5e\obj\Debug\MonsterManual5e.csprojResolveAssemblyReference.cache
 C:\Users\tnthomp1\Documents\Websites Github\dnd-5e-monster-manual\MonsterManual5e\bin\ApplicationInsights.config
 C:\Users\tnthomp1\Documents\Websites Github\dnd-5e-monster-manual\MonsterManual5e\bin\roslyn\csc.exe
 C:\Users\tnthomp1\Documents\Websites Github\dnd-5e-monster-manual\MonsterManual5e\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -238,3 +237,4 @@ S:\Tanya Murrow\Git\dnd-5e-monster-manual\MonsterManual5e\bin\Newtonsoft.Json.xm
 S:\Tanya Murrow\Git\dnd-5e-monster-manual\MonsterManual5e\obj\Debug\MonsterManual5e.csprojResolveAssemblyReference.cache
 S:\Tanya Murrow\Git\dnd-5e-monster-manual\MonsterManual5e\obj\Debug\MonsterManual5e.dll
 S:\Tanya Murrow\Git\dnd-5e-monster-manual\MonsterManual5e\obj\Debug\MonsterManual5e.pdb
+C:\Users\tnthomp1\Documents\Websites Github\dnd-5e-monster-manual\MonsterManual5e\obj\Debug\MonsterManual5e.csprojResolveAssemblyReference.cache

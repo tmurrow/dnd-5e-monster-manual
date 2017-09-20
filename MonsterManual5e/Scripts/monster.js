@@ -14,8 +14,13 @@
 
     $('.tags').select2({
         tags: true,
-        tokenSeparators: [',', '\n'],
+        tokenSeparators: [',', '\n', '\t'],
         closeOnSelect: false,
         placeholder: 'Select one or more options or type a new entry...'
+    });
+
+    // Tooltips
+    $('[data-toggle="tooltip"]').tooltip({
+        delay: { "show": 500 }
     });
 });

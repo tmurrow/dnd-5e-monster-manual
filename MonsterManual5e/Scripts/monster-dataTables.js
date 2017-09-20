@@ -2,8 +2,8 @@
 
     // DataTables variables
 
-    var COLS = ["Name", "Size", "Type", "AC", "HP", "Str", "Dex", "Con", "Int", "Wis", "Cha", "Str Save", "Dex Save", "Con Save", "Int Save", "Wis Save", "Cha Save", "Passive Perception", "CR", "CR Hidden", "XP", "Source"];
-    var HIDDENCOLUMNS = ["Str", "Dex", "Con", "Int", "Wis", "Cha", "Str Save", "Dex Save", "Con Save", "Int Save", "Wis Save", "Cha Save", "Passive Perception"];
+    var COLS = ["Name", "Size", "Type", "AC", "HP", "Str", "Dex", "Con", "Int", "Wis", "Cha", "Str ST", "Dex ST", "Con ST", "Int ST", "Wis ST", "Cha ST", "PP", "CR", "CR Hidden", "XP", "Source"];
+    var HIDDENCOLUMNS = ["Str", "Dex", "Con", "Int", "Wis", "Cha", "Str ST", "Dex ST", "Con ST", "Int ST", "Wis ST", "Cha ST"];
     var hiddenColumnsIndexes = new Array();
 
     for (var i = 0; i < HIDDENCOLUMNS.length; i++)

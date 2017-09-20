@@ -15,6 +15,9 @@ namespace MonsterManual5e.Models.Mapping
                 .IsRequired()
                 .HasMaxLength(63);
 
+            this.Property(t => t.UrlName)
+                .HasMaxLength(63);
+
             this.Property(t => t.AcNote)
                 .HasMaxLength(63);
 
@@ -28,6 +31,7 @@ namespace MonsterManual5e.Models.Mapping
             this.ToTable("monster", "dnd_monster");
             this.Property(t => t.Id).HasColumnName("id");
             this.Property(t => t.Name).HasColumnName("name");
+            this.Property(t => t.UrlName).HasColumnName("url_name");
             this.Property(t => t.SizeId).HasColumnName("size_id");
             this.Property(t => t.TypeId).HasColumnName("type_id");
             this.Property(t => t.AlignmentAttitudeId).HasColumnName("alignment_attitude_id");

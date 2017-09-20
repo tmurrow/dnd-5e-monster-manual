@@ -4,9 +4,9 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="page-header">
+@*<div class="page-header">
     <h1>Monster Manual</h1>
-</div>
+</div>*@
 
 <div class="row">
     <div class="col-md-12">
@@ -64,32 +64,32 @@
                     <th class="vg-default" data-column="size">Size</th>
                     <th class="vg-default" data-column="type">Type</th>
                     @*<th>Alignment</th>*@
-                    <th class="vg-default" >AC</th>
-                    <th class="vg-default" >HP</th>
-                    <th class="vg-ability" >Str</th>
-                    <th class="vg-ability" >Dex</th>
-                    <th class="vg-ability" >Con</th>
-                    <th class="vg-ability" >Int</th>
-                    <th class="vg-ability" >Wis</th>
-                    <th class="vg-ability" >Cha</th>
-                    <th class="vg-ability" >Str Save</th>
-                    <th class="vg-ability" >Dex Save</th>
-                    <th class="vg-ability" >Con Save</th>
-                    <th class="vg-ability" >Int Save</th>
-                    <th class="vg-ability" >Wis Save</th>
-                    <th class="vg-ability" >Cha Save</th>
-                    <th class="vg-default" >Passive Perception</th>
-                    <th class="vg-default" >CR</th>
+                    <th class="vg-default"><span data-toggle="tooltip" data-placement="top" title="Armor Class">AC</span></th>
+                    <th class="vg-default"><span data-toggle="tooltip" data-placement="top" title="Hit Points">HP</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Strength">Str</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Dexterity">Dex</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Constitution">Con</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Intelligence">Int</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Wisdom">Wis</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Charisma">Cha</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Strength Saving Throw">Str ST</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Dexterity Saving Throw">Dex ST</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Constitution Saving Throw">Con ST</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Intelligence Saving Throw">Int ST</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Wisdom Saving Throw">Wis ST</span></th>
+                    <th class="vg-ability"><span data-toggle="tooltip" data-placement="top" title="Charisma Saving Throw">Cha ST</span></th>
+                    <th class="vg-default"><span data-toggle="tooltip" data-placement="top" title="Passive Perception">PP</span></th>
+                    <th class="vg-default"><span data-toggle="tooltip" data-placement="top" title="Challenge Rating">CR</span></th>
                     <th class="vg-none">CR Hidden</th>
-                    <th class="vg-default" >XP</th>
-                    <th class="vg-default">Source</th>
+                    <th class="vg-default"><span data-toggle="tooltip" data-placement="top" title="Experience Points">XP</span></th>
+                    <th class="vg-default"><span>Source</span></th>
                 </tr>
             </thead>
             <tbody>
                 @foreach (var monster in Model.Monsters)
                 {
                     <tr>
-                        <td>@Html.ActionLink(monster.Name, "Info", "Monster", new { id = monster.Id }, null)</td>
+                        <td>@Html.ActionLink(monster.Name, "Info", "Monster", new { id = monster.Id, name = monster.UrlName }, null)</td>
                         <td>@monster.Size.Name</td>
                         <td>@monster.MonsterType.Name</td>
                         @*<td>@monster.Alignment</td>*@

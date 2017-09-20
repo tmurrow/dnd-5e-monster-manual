@@ -25,6 +25,8 @@ namespace MonsterManual5e.Models
 
         public string Name { get; set; }
 
+        public string UrlName { get; set; }
+
         public int SizeId { get; set; }
 
         public int TypeId { get; set; }
