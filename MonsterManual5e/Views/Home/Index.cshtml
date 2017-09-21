@@ -83,6 +83,7 @@
                     <th class="vg-none">CR Hidden</th>
                     <th class="vg-default"><span data-toggle="tooltip" data-placement="top" title="Experience Points">XP</span></th>
                     <th class="vg-default"><span>Source</span></th>
+                    <th><span>Add to...</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -112,6 +113,7 @@
                         <td>@monster.ChallengeRating</td>
                         <td>@monster.ExperiencePoints</td>
                         <td>@monster.Source.Abbreviation @monster.SourcePage</td>
+                        <td>@Html.ActionLink("Encounter", "AddToEncounter", "Encounter", monster.Id, null) | @Html.ActionLink("Difficulty Calculator", "AddToDifficultyCalculator", "Encounter", monster.Id, null)</td>
                     </tr>
                 }
             </tbody>
