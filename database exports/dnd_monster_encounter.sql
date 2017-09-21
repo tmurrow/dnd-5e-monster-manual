@@ -16,32 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `xref_monster_language`
+-- Table structure for table `encounter`
 --
 
-DROP TABLE IF EXISTS `xref_monster_language`;
+DROP TABLE IF EXISTS `encounter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `xref_monster_language` (
-  `monster_id` int(11) NOT NULL,
-  `language_id` int(11) NOT NULL,
-  `speak` tinyint(4) NOT NULL,
-  `commands_only` tinyint(4) NOT NULL,
-  `note` tinytext,
-  KEY `language_id_idx` (`language_id`),
-  KEY `monster_id_language_idx` (`monster_id`),
-  CONSTRAINT `language_id` FOREIGN KEY (`language_id`) REFERENCES `language` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `monster_id_language` FOREIGN KEY (`monster_id`) REFERENCES `monster` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+CREATE TABLE `encounter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `experience` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  UNIQUE KEY `name_UNIQUE` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `xref_monster_language`
+-- Dumping data for table `encounter`
 --
 
-LOCK TABLES `xref_monster_language` WRITE;
-/*!40000 ALTER TABLE `xref_monster_language` DISABLE KEYS */;
-/*!40000 ALTER TABLE `xref_monster_language` ENABLE KEYS */;
+LOCK TABLES `encounter` WRITE;
+/*!40000 ALTER TABLE `encounter` DISABLE KEYS */;
+/*!40000 ALTER TABLE `encounter` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-21 10:27:06
+-- Dump completed on 2017-09-21 10:27:07

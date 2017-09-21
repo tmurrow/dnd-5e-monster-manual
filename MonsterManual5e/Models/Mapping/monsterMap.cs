@@ -16,6 +16,7 @@ namespace MonsterManual5e.Models.Mapping
                 .HasMaxLength(63);
 
             this.Property(t => t.UrlName)
+                .IsRequired()
                 .HasMaxLength(63);
 
             this.Property(t => t.AcNote)

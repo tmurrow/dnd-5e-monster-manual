@@ -185,6 +185,7 @@
     <Compile Include="Models\condition.cs" />
     <Compile Include="Models\damage_type.cs" />
     <Compile Include="Models\dnd_monsterContext.cs" />
+    <Compile Include="Models\encounter.cs" />
     <Compile Include="Models\info_type.cs" />
     <Compile Include="Models\language.cs" />
     <Compile Include="Models\Mapping\ability_scoreMap.cs" />
@@ -193,6 +194,7 @@
     <Compile Include="Models\Mapping\alignment_moralityMap.cs" />
     <Compile Include="Models\Mapping\conditionMap.cs" />
     <Compile Include="Models\Mapping\damage_typeMap.cs" />
+    <Compile Include="Models\Mapping\encounterMap.cs" />
     <Compile Include="Models\Mapping\info_typeMap.cs" />
     <Compile Include="Models\Mapping\languageMap.cs" />
     <Compile Include="Models\Mapping\monsterMap.cs" />
@@ -203,6 +205,7 @@
     <Compile Include="Models\Mapping\sourceMap.cs" />
     <Compile Include="Models\Mapping\speedMap.cs" />
     <Compile Include="Models\Mapping\tagMap.cs" />
+    <Compile Include="Models\Mapping\xref_encounter_monsterMap.cs" />
     <Compile Include="Models\Mapping\xref_monster_damage_typeMap.cs" />
     <Compile Include="Models\Mapping\xref_monster_infoMap.cs" />
     <Compile Include="Models\Mapping\xref_monster_languageMap.cs" />
@@ -217,6 +220,7 @@
     <Compile Include="Models\source.cs" />
     <Compile Include="Models\speed.cs" />
     <Compile Include="Models\tag.cs" />
+    <Compile Include="Models\xref_encounter_monster.cs" />
     <Compile Include="Models\xref_monster_damage_type.cs" />
     <Compile Include="Models\xref_monster_info.cs" />
     <Compile Include="Models\xref_monster_language.cs" />
