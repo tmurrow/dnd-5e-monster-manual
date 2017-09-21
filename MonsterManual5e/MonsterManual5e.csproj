@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MonsterManual5e</RootNamespace>
     <AssemblyName>MonsterManual5e</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -237,6 +237,7 @@
     <Compile Include="ViewModels\MonsterViewModel.cs" />
     <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="ViewModels\TestViewModel.cs" />
+    <Compile Include="Controllers\EncounterController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="CodeTemplates\ReverseEngineerCodeFirst\Context.tt" />
@@ -544,6 +545,7 @@
     <Content Include="Views\Monster\Info.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
     <Content Include="Views\Search\_Results.cshtml" />
+    <Content Include="Views\Encounter\DifficultyCalculator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
