@@ -297,3 +297,4 @@ T:\_Git\dnd-5e-monster-manual\MonsterManual5e\bin\Antlr3.Runtime.pdb
 T:\_Git\dnd-5e-monster-manual\MonsterManual5e\bin\Newtonsoft.Json.xml
 T:\_Git\dnd-5e-monster-manual\MonsterManual5e\obj\Debug\MonsterManual5e.dll
 T:\_Git\dnd-5e-monster-manual\MonsterManual5e\obj\Debug\MonsterManual5e.pdb
+T:\_Git\dnd-5e-monster-manual\MonsterManual5e\obj\Debug\MonsterManual5e.csprojResolveAssemblyReference.cache
