@@ -1,0 +1,55 @@
+-- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+--
+-- Host: localhost    Database: dnd_monster
+-- ------------------------------------------------------
+-- Server version	5.7.19-log
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `encounter_difficulty_threshold`
+--
+
+DROP TABLE IF EXISTS `encounter_difficulty_threshold`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `encounter_difficulty_threshold` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `easy` int(11) NOT NULL,
+  `medium` int(11) NOT NULL,
+  `hard` int(11) NOT NULL,
+  `deadly` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `encounter_difficulty_threshold`
+--
+
+LOCK TABLES `encounter_difficulty_threshold` WRITE;
+/*!40000 ALTER TABLE `encounter_difficulty_threshold` DISABLE KEYS */;
+INSERT INTO `encounter_difficulty_threshold` VALUES (1,25,50,75,100),(2,50,100,150,200),(3,75,150,225,400),(4,125,250,375,500),(5,250,500,750,1100),(6,300,600,900,1400),(7,350,750,1100,1700),(8,450,900,1400,2100),(9,550,1100,1600,2400),(10,600,1200,1900,2800),(11,800,1600,2400,3600),(12,100,2000,3000,4500),(13,1100,2200,3400,5100),(14,1250,2500,3800,5700),(15,1400,2800,4300,6400),(16,1600,3200,4800,7200),(17,2000,3900,5900,8800),(18,2100,4200,6300,9500),(19,2400,4900,7300,10900),(20,2800,5700,8500,12700);
+/*!40000 ALTER TABLE `encounter_difficulty_threshold` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-09-21 14:46:08
