@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MonsterManual5e.Models;
+using MonsterManual5e.ViewModels;
+using MonsterManual5e.Repositories;
+using MonsterManual5e.Helpers;
+
 
 namespace MonsterManual5e.Views.Encounter
 {
