@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
+using System.Data.Entity;
+using System.Diagnostics;
 
 namespace MonsterManual5e.Repositories
 {
@@ -21,13 +23,11 @@ namespace MonsterManual5e.Repositories
         {
             using (var context = new DndMonstercontext())
             {
-                //Encounter encounter = GetEncounterById(encounterID);
-                //encounter.Monsters.Add(new MonsterRepository().GetMonsterById(monsterID));
-                //context.Entry(enconuter).State = EntityState.Added;
-                XrefEncounterMonster xref = new XrefEncounterMonster();
-                xref.EncounterId = encounterID;
-                xref.MonsterId = monsterID;
-                context.SaveChanges();
+                Encounter encounter = GetEncounterById(encounterID);
+                encounter.Monsters.Add(new MonsterRepository().GetMonsterById(monsterID));
+                context.Entry(encounter).State = EntityState.Modified;
+                int result = context.SaveChanges();
+                Debug.WriteLine("Result = " + result);
             }
         }
     }
