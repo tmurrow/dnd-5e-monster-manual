@@ -9,165 +9,187 @@
 
 <form>
     @Html.HiddenFor(m => m.Monster.Id)
-    <div class="form-group">
-        @Html.LabelFor(m => m.Monster.Name, htmlAttributes: new { @class = "control-label" })
-        <p class="form-control-static">@Model.Monster.Name</p>
-    </div>
-
     <div class="row">
-        <div class="col-md-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.Size, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.Size.Name</p>
+        <div class="col-md-6">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Name, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.Name</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    @Html.ActionLink("Edit " + Model.Monster.Name, "Edit", "Monster", new { id = Model.Monster.Id }, new { @class = "btn btn-primary" })
+                </div>
+            </div>            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Size, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.Size.Name</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.MonsterType, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.MonsterType.Name</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Alignment, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Html.Action("GetAlignmentName", "Monster", new { a = Model.Monster.AlignmentAttitude.Name, m = Model.Monster.AlignmentMorality.Name })</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.MonsterType, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.MonsterType.Name</p>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Ac, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.Ac</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.AcNote, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.AcNote</p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Hp, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.Hp</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.HpNote, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.HpNote</p>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.Alignment, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Html.Action("GetAlignmentName", "Monster", new { a = Model.Monster.AlignmentAttitude.Name, m = Model.Monster.AlignmentMorality.Name })</p>
+            <div class="row">
+                <div class="col-sm-2 col-xs-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Str, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.Str</p>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Dex, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.Dex</p>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Con, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.Con</p>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Int, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.Int</p>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Wis, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.Wis</p>
+                    </div>
+                </div>
+                <div class="col-sm-2 col-xs-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.Cha, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.Cha</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.PassivePerception, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.PassivePerception</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <p>
+                            @Html.Label("Languages", htmlAttributes: new { @class = "control-label" })
+                            @foreach (var language in Model.Monster.XrefMonsterLanguage)
+                            {
+                                @language.Language.Name
+                            }
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Monster.TelepathyDistance, htmlAttributes: new { @class = "control-label" })
+                        <p class="form-control-static">@Model.Monster.TelepathyDistance ft.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <table class="table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Sense</th>
+                                <th>Distance</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var monsterSense in Model.Monster.XrefMonsterSense)
+                            {
+                                <tr data-sense="@monsterSense.Sense.Name">
+                                    <td>@monsterSense.Sense.Name</td>
+                                    <td>@monsterSense.Value</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-4">
+                    <table class="table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Skill</th>
+                                <th>Bonus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var monsterSkill in Model.Monster.XrefMonsterSkill)
+                            {
+                                <tr data-skill="@monsterSkill.Skill.Name">
+                                    <td>@monsterSkill.Skill.Name</td>
+                                    <td>@monsterSkill.Value.ToString("+0;-0;0")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-sm-4">
+                    <table class="table-condensed">
+                        <thead>
+                            <tr>
+                                <th>Skill</th>
+                                <th>Bonus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var monsterSpeed in Model.Monster.XrefMonsterSpeed)
+                            {
+                                <tr data-skill="@monsterSpeed.Speed.Name">
+                                    <td>@monsterSpeed.Speed.Name</td>
+                                    <td>@monsterSpeed.Value ft.</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="row">
-        <div class="col-md-2">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.Ac, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.Ac</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.AcNote, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.AcNote</p>
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.Hp, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.Hp</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.HpNote, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.HpNote</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-2 col-xs-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.Str, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.Str</p>
-            </div>
-        </div>
-        <div class="col-sm-2 col-xs-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.Dex, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.Dex</p>
-            </div>
-        </div>
-        <div class="col-sm-2 col-xs-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.Con, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.Con</p>
-            </div>
-        </div>
-        <div class="col-sm-2 col-xs-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.Int, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.Int</p>
-            </div>
-        </div>
-        <div class="col-sm-2 col-xs-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.Wis, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.Wis</p>
-            </div>
-        </div>
-        <div class="col-sm-2 col-xs-4">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.Cha, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.Cha</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-2">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.PassivePerception, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.PassivePerception</p>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <div class="form-group">
-                @Html.Label("Languages", htmlAttributes: new { @class = "control-label" })
-                
-            </div>
-        </div>
-        <div class="col-md-2">
-            <div class="form-group">
-                @Html.LabelFor(m => m.Monster.TelepathyDistance, htmlAttributes: new { @class = "control-label" })
-                <p class="form-control-static">@Model.Monster.TelepathyDistance ft.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-6">
-            <table class="table-condensed">
-                <thead>
-                    <tr>
-                        <th>Sense</th>
-                        <th>Distance</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var sense in Model.Senses)
-                    {
-                        <tr data-sense="@sense.Text">
-                            <td>@sense.Text</td>
-                            <td>
-                                <div class="input-group">
-                                    <input class="form-control" type="number" value="0" />
-                                    <span class="input-group-addon">ft.</span>
-                                </div>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-        <div class="col-sm-6">
-            <table class="table-condensed">
-                <thead>
-                    <tr>
-                        <th>Skill</th>
-                        <th>Bonus</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var skill in Model.Skills)
-                    {
-                        <tr data-skill="@skill.Text">
-                            <td>@skill.Text</td>
-                            <td>
-                                <input class="form-control" type="number" value="0" />
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
-
 </form>

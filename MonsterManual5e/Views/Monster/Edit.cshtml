@@ -1,0 +1,199 @@
+﻿@model MonsterManual5e.ViewModels.MonsterViewModel
+@{
+    ViewBag.Title = Model.Monster.Name;
+}
+
+<div class="page-header">
+    <h1>Editing @Model.Monster.Name</h1>
+</div>
+
+<form>
+    @Html.HiddenFor(m => m.Monster.Id)
+    <div class="row">
+        <div class="col-md-8">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Name, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.Name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter the monster's name...", @required = "required" } })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-success">Submit</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Size, htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownListFor(m => m.Monster.SizeId, Model.Sizes, htmlAttributes: new { @class = "form-control single-select" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.MonsterType, htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownListFor(m => m.Monster.TypeId, Model.Types, htmlAttributes: new { @class = "form-control single-select" })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Alignment, htmlAttributes: new { @class = "control-label" })
+                @Html.DropDownListFor(m => m.SelectedAlignment, Model.Alignments, htmlAttributes: new { @class = "form-control single-select" })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Ac, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.Ac, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @required = "required" } })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.AcNote, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.AcNote, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter an optional AC note...", @required = "required" } })
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Hp, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.Hp, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @required = "required" } })
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.HpNote, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.HpNote, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter an optional HP note...", @required = "required" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-2 col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Str, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.Str, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @Value = "10", @required = "required" } })
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Dex, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.Dex, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @Value = "10", @required = "required" } })
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Con, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.Con, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @Value = "10", @required = "required" } })
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Int, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.Int, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @Value = "10", @required = "required" } })
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Wis, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.Wis, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @Value = "10", @required = "required" } })
+            </div>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.Cha, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.Cha, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @Value = "10", @required = "required" } })
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.PassivePerception, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(m => m.Monster.PassivePerception, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @required = "required" } })
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="form-group">
+                @Html.Label("Languages", htmlAttributes: new { @class = "control-label" })
+                @Html.ListBoxFor(m => m.SelectedLanguages, Model.Languages, new { @class = "form-control multi-select" })
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class="form-group">
+                @Html.LabelFor(m => m.Monster.TelepathyDistance, htmlAttributes: new { @class = "control-label" })
+                <div class="input-group">
+                    @Html.EditorFor(m => m.Monster.TelepathyDistance, new { htmlAttributes = new { @class = "form-control", @placeholder = "", @Value = "0" } })
+                    <span class="input-group-addon">ft.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3 col-sm-6">
+            <div class="form-group">
+                @Html.Label("Senses", htmlAttributes: new { @class = "control-label" })
+                @Html.ListBoxFor(m => m.SelectedSenses, Model.Senses, new { @class = "form-control multi-select" })
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <table class="table-condensed">
+                <thead>
+                    <tr>
+                        <th>Sense</th>
+                        <th>Distance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sense in Model.Senses)
+                    {
+                        <tr data-sense="@sense.Text">
+                            <td>@sense.Text</td>
+                            <td>
+                                <div class="input-group">
+                                    <input class="form-control" type="number" value="0" />
+                                    <span class="input-group-addon">ft.</span>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="form-group">
+                @Html.Label("Skills", htmlAttributes: new { @class = "control-label" })
+                @Html.ListBoxFor(m => m.SelectedSkills, Model.Skills, new { @class = "form-control multi-select" })
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <table class="table-condensed">
+                <thead>
+                    <tr>
+                        <th>Skill</th>
+                        <th>Bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @*@foreach (var skill in Model.Skills)
+                    {
+                        if (Model.SelectedSkills.Contains(Convert.ToInt32(skill.Value)))
+                        {
+                            <tr data-skill="@skill.Text">
+                                <td>@skill.Text</td>
+                                <td>
+                                    <input class="form-control" type="number" value="@Model.SelectedSkillsBonuses.ElementAt(0)" />
+                                    
+                                </td>
+                            </tr>
+                        }
+                    }*@
+                </tbody>
+            </table>
+            @Html.HiddenFor(m => m.SelectedSkillsBonuses)
+        </div>
+    </div>
+</form>
