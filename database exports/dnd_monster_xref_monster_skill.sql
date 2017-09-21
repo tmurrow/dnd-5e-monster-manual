@@ -40,6 +40,7 @@ CREATE TABLE `xref_monster_skill` (
 
 LOCK TABLES `xref_monster_skill` WRITE;
 /*!40000 ALTER TABLE `xref_monster_skill` DISABLE KEYS */;
+INSERT INTO `xref_monster_skill` VALUES (1,12,5,NULL),(2,6,12,NULL),(2,12,10,NULL),(3,7,7,NULL),(3,12,9,NULL),(4,12,11,NULL),(5,12,14,NULL);
 /*!40000 ALTER TABLE `xref_monster_skill` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-21 10:27:08
+-- Dump completed on 2017-09-21 13:10:22

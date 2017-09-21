@@ -35,28 +35,24 @@ namespace MonsterManual5e.ViewModels
 
         public ICollection<SelectListItem> Types { get; set; }
 
+        public ICollection<int> SelectedSenses { get; set; }
+
+        public ICollection<int> SelectedSkills { get; set; }
+
+        public ICollection<int> SelectedLanguages { get; set; }
+
+        public ICollection<int> SelectedSkillsBonuses { get; set; }
+
         //public ICollection<int> SelectedAffectTypes { get; set; }
 
-        //public ICollection<int> SelectedAlignments { get; set; }
-
-        public ICollection<int> SelectedConditions { get; set; }
+        //public ICollection<int> SelectedConditions { get; set; }
 
         //public ICollection<int> SelectedDamageTypes { get; set; }
 
         //public ICollection<int> SelectedInfoTypes { get; set; }
+        
+        //public ICollection<int> SelectedSpeeds { get; set; }
 
-        public ICollection<int> SelectedLanguages { get; set; }
-
-        public ICollection<int> SelectedSenses { get; set; }
-
-        //public ICollection<int> SelectedSizes { get; set; }
-
-        public ICollection<int> SelectedSkills { get; set; }
-
-        public ICollection<int> SelectedSpeeds { get; set; }
-
-        public ICollection<int> SelectedTags { get; set; }
-
-        //public ICollection<int> SelectedTypes { get; set; }
+        //public ICollection<int> SelectedTags { get; set; }
     }
 }
