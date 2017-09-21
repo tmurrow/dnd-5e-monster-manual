@@ -186,6 +186,8 @@
     <Compile Include="Models\damage_type.cs" />
     <Compile Include="Models\dnd_monsterContext.cs" />
     <Compile Include="Models\encounter.cs" />
+    <Compile Include="Models\encounter_difficulty_threshold.cs" />
+    <Compile Include="Models\encounter_xp_multiplier.cs" />
     <Compile Include="Models\info_type.cs" />
     <Compile Include="Models\language.cs" />
     <Compile Include="Models\Mapping\ability_scoreMap.cs" />
@@ -195,6 +197,8 @@
     <Compile Include="Models\Mapping\conditionMap.cs" />
     <Compile Include="Models\Mapping\damage_typeMap.cs" />
     <Compile Include="Models\Mapping\encounterMap.cs" />
+    <Compile Include="Models\Mapping\encounter_difficulty_thresholdMap.cs" />
+    <Compile Include="Models\Mapping\encounter_xp_multiplierMap.cs" />
     <Compile Include="Models\Mapping\info_typeMap.cs" />
     <Compile Include="Models\Mapping\languageMap.cs" />
     <Compile Include="Models\Mapping\monsterMap.cs" />
