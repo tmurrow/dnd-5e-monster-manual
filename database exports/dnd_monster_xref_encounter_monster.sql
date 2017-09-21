@@ -1,6 +1,6 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
--- Host: localhost    Database: dnd_monster
+-- Host: middleearth    Database: dnd_monster
 -- ------------------------------------------------------
 -- Server version	5.7.19-log
 
@@ -25,8 +25,8 @@ DROP TABLE IF EXISTS `xref_encounter_monster`;
 CREATE TABLE `xref_encounter_monster` (
   `encounter_id` int(11) NOT NULL,
   `monster_id` int(11) NOT NULL,
-  KEY `encounter_id_idx` (`encounter_id`),
   KEY `monster_id_encounter_idx` (`monster_id`),
+  KEY `encounter_id_idx` (`encounter_id`),
   CONSTRAINT `encounter_id` FOREIGN KEY (`encounter_id`) REFERENCES `encounter` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `monster_id_encounter` FOREIGN KEY (`monster_id`) REFERENCES `monster` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-21 10:27:06
+-- Dump completed on 2017-09-21 13:10:32
