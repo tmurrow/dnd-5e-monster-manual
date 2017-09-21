@@ -7,7 +7,7 @@ using MonsterManual5e.Repositories;
 
 namespace MonsterManual5e.Helpers
 {
-    public static class AlignmentBuilder
+    public static class AlignmentHelper
     {
         private static MonsterRepository mrepo = new MonsterRepository();
 
@@ -102,7 +102,7 @@ namespace MonsterManual5e.Helpers
             return alignmentList;
         }
 
-        private static int GetAlignmentOrder(string attitude, string morality)
+        public static int GetAlignmentOrder(string attitude, string morality)
         {
             int order = 0;
 

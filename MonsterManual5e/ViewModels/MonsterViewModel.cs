@@ -35,6 +35,8 @@ namespace MonsterManual5e.ViewModels
 
         public ICollection<SelectListItem> Types { get; set; }
 
+        public int SelectedAlignment { get; set; }
+
         public ICollection<int> SelectedSenses { get; set; }
 
         public ICollection<int> SelectedSkills { get; set; }

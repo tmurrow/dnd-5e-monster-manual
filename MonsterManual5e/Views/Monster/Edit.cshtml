@@ -25,19 +25,19 @@
         <div class="col-md-4">
             <div class="form-group">
                 @Html.LabelFor(m => m.Monster.Size, htmlAttributes: new { @class = "control-label" })
-                @Html.DropDownListFor(m => m.Monster.Size, Model.Sizes, htmlAttributes: new { @class = "form-control single-select" })
+                @Html.DropDownListFor(m => m.Monster.SizeId, Model.Sizes, htmlAttributes: new { @class = "form-control single-select" })
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 @Html.LabelFor(m => m.Monster.MonsterType, htmlAttributes: new { @class = "control-label" })
-                @Html.DropDownListFor(m => m.Monster.MonsterType, Model.Types, htmlAttributes: new { @class = "form-control single-select" })
+                @Html.DropDownListFor(m => m.Monster.TypeId, Model.Types, htmlAttributes: new { @class = "form-control single-select" })
             </div>
         </div>
         <div class="col-md-4">
             <div class="form-group">
                 @Html.LabelFor(m => m.Monster.Alignment, htmlAttributes: new { @class = "control-label" })
-                @Html.DropDownListFor(m => m.Monster.Alignment, Model.Alignments, htmlAttributes: new { @class = "form-control single-select" })
+                @Html.DropDownListFor(m => m.SelectedAlignment, Model.Alignments, htmlAttributes: new { @class = "form-control single-select" })
             </div>
         </div>
     </div>

@@ -73,6 +73,8 @@ namespace MonsterManual5e.Controllers
                 vm.SelectedSenses.Add(vm.Monster.XrefMonsterSense.ElementAt(i).SenseId);
             }
 
+            vm.SelectedAlignment = AlignmentHelper.GetAlignmentOrder(vm.Monster.AlignmentAttitude.Name, vm.Monster.AlignmentMorality.Name);
+
             return View(vm);
         }
 
@@ -85,7 +87,7 @@ namespace MonsterManual5e.Controllers
 
         public string GetAlignmentName(string a, string m)
         {
-            return AlignmentBuilder.GetAlignment(a, m);
+            return AlignmentHelper.GetAlignment(a, m);
         }
     }
 }
