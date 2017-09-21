@@ -14,14 +14,14 @@ namespace MonsterManual5e.Views.Encounter
             return View();
         }
 
-        public ActionResult Add(int id)
+        public ActionResult AddToEncounter() //int id)
         {
-            return null;
+            return View();
         }
 
-        public ActionResult DifficultyCalculator(int id)
+        public ActionResult AddToDifficultyCalculator() //int id)
         {
-            return null;
+            return View();
         }
     }
 }
