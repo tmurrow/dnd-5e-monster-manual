@@ -14,8 +14,8 @@ namespace MonsterManual5e.Models
             this.XrefMonsterSense = new List<XrefMonsterSense>();
             this.XrefMonsterSkill = new List<XrefMonsterSkill>();
             this.XrefMonsterSpeed = new List<XrefMonsterSpeed>();
-            this.Encounters = new List<Encounter>();
             this.Conditions = new List<Condition>();
+            this.Encounters = new List<Encounter>();
             this.DamageType = new List<DamageType>();
             this.DamageType1 = new List<DamageType>();
             this.Tags = new List<Tag>();
@@ -107,9 +107,9 @@ namespace MonsterManual5e.Models
 
         public virtual MonsterType MonsterType { get; set; }
 
-        public virtual ICollection<Encounter> Encounters { get; set; }
-
         public virtual ICollection<Condition> Conditions { get; set; }
+
+        public virtual ICollection<Encounter> Encounters { get; set; }
 
         public virtual ICollection<DamageType> DamageType { get; set; }
 

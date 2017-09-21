@@ -27,7 +27,7 @@ namespace MonsterManual5e.Models.Mapping
                 .WithMany(t => t.Encounters)
                 .Map(m =>
                     {
-                        m.ToTable("xref_encounter_monster", "dnd_monster");
+                        m.ToTable("xref_monster_encounter", "dnd_monster");
                         m.MapLeftKey("encounter_id");
                         m.MapRightKey("monster_id");
                     });
