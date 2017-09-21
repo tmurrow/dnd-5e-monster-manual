@@ -48,7 +48,7 @@ namespace MonsterManual5e.Helpers
             List<SelectListItem> alignmentSelectList = new List<SelectListItem>();
             List<AlignmentAttitude> alignmentAttitudeList = mrepo.GetAllAlignmentAttitudes().ToList();
             List<AlignmentMorality> alignmentMoralityList = mrepo.GetAllAlignmentMoralities().ToList();
-            List<Alignment> alignmentList = AlignmentBuilder.GetAllAlignments();
+            List<Alignment> alignmentList = AlignmentHelper.GetAllAlignments();
             alignmentList = alignmentList.OrderBy(a => a.Order).ToList();
 
             foreach (Alignment x in alignmentList)

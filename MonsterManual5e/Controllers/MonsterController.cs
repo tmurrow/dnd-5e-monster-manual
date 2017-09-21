@@ -38,19 +38,56 @@ namespace MonsterManual5e.Controllers
         {
             MonsterViewModel vm = new MonsterViewModel();
             vm.Monster = mrepo.GetMonsterById(id);
+            //vm.Languages = SelectListBuilder.GetLanguages().ToList();
+            //vm.Sizes = SelectListBuilder.GetSizes().ToList();
+            //vm.Types = SelectListBuilder.GetTypes().ToList();
+            //vm.Alignments = SelectListBuilder.GetAlignments().ToList();
+            //vm.Senses = SelectListBuilder.GetSenses().ToList();
+            //vm.Skills = SelectListBuilder.GetSkills().ToList();
+
+            return View(vm);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            MonsterViewModel vm = new MonsterViewModel();
+            vm.Monster = mrepo.GetMonsterById(id);
             vm.Languages = SelectListBuilder.GetLanguages().ToList();
             vm.Sizes = SelectListBuilder.GetSizes().ToList();
             vm.Types = SelectListBuilder.GetTypes().ToList();
             vm.Alignments = SelectListBuilder.GetAlignments().ToList();
             vm.Senses = SelectListBuilder.GetSenses().ToList();
             vm.Skills = SelectListBuilder.GetSkills().ToList();
+            vm.SelectedSenses = new List<int>();
+            vm.SelectedSkills = new List<int>();
+            vm.SelectedSkillsBonuses = new List<int>();
+
+            for (int i = 0; i < vm.Monster.XrefMonsterSkill.Count; i++)
+            {
+                vm.SelectedSkills.Add(vm.Monster.XrefMonsterSkill.ElementAt(i).SkillId);
+                vm.SelectedSkillsBonuses.Add(vm.Monster.XrefMonsterSkill.ElementAt(i).Value);
+            }
+
+            for (int i = 0; i < vm.Monster.XrefMonsterSense.Count; i++)
+            {
+                vm.SelectedSenses.Add(vm.Monster.XrefMonsterSense.ElementAt(i).SenseId);
+            }
+
+            vm.SelectedAlignment = AlignmentHelper.GetAlignmentOrder(vm.Monster.AlignmentAttitude.Name, vm.Monster.AlignmentMorality.Name);
 
             return View(vm);
         }
 
+        [HttpPost]
+        public ActionResult Edit(MonsterViewModel mvm)
+        {
+
+            return Info(mvm.Monster.Id);
+        }
+
         public string GetAlignmentName(string a, string m)
         {
-            return AlignmentBuilder.GetAlignment(a, m);
+            return AlignmentHelper.GetAlignment(a, m);
         }
     }
 }

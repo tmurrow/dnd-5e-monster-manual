@@ -14,7 +14,26 @@ namespace MonsterManual5e.Repositories
         {
             using (var context = new DndMonstercontext())
             {
-                return context.Monsters.Include("Size").Include("MonsterType").Include("AlignmentAttitude").Include("AlignmentMorality").Include("Source").ToList();
+                return context.Monsters
+                    .Include("Size")
+                    .Include("MonsterType")
+                    .Include("AlignmentAttitude")
+                    .Include("AlignmentMorality")
+                    .Include("Source")
+                    .Include(m => m.XrefMonsterDamageType.Select(s => s.DamageType))
+                    .Include(m => m.XrefMonsterDamageType.Select(s => s.AffectType))
+                    .Include(m => m.XrefMonsterInfo.Select(s => s.InfoType))
+                    .Include(m => m.XrefMonsterLanguage.Select(s => s.Language))
+                    .Include(m => m.XrefMonsterSense.Select(s => s.Sense))
+                    .Include(m => m.XrefMonsterSkill.Select(s => s.Skill))
+                    .Include(m => m.XrefMonsterSpeed.Select(s => s.Speed))
+                    .Include("Encounters")
+                    .Include("Conditions")
+                    .Include("DamageType")
+                    .Include("DamageType1")
+                    .Include("Tags")
+                    .Include("DamageType2")
+                    .ToList();
             }
         }
 
@@ -22,7 +41,28 @@ namespace MonsterManual5e.Repositories
         {
             using (var context = new DndMonstercontext())
             {
-                return context.Monsters.Where(m => m.Id == id).Include("Size").Include("MonsterType").Include("AlignmentAttitude").Include("AlignmentMorality").Include("Source").SingleOrDefault();
+                return context.Monsters
+                    .Include("Size")
+                    .Include("MonsterType")
+                    .Include("AlignmentAttitude")
+                    .Include("AlignmentMorality")
+                    .Include("Source")
+                    .Include(m => m.XrefMonsterDamageType.Select(s => s.DamageType))
+                    .Include(m => m.XrefMonsterDamageType.Select(s => s.AffectType))
+                    .Include(m => m.XrefMonsterInfo.Select(s => s.InfoType))
+                    .Include(m => m.XrefMonsterLanguage.Select(s => s.Language))
+                    .Include(m => m.XrefMonsterSense.Select(s => s.Sense))
+                    .Include(m => m.XrefMonsterSkill.Select(s => s.Skill))
+                    .Include(m => m.XrefMonsterSpeed.Select(s => s.Speed))
+                    .Include("Encounters")
+                    .Include("Conditions")
+                    .Include("DamageType")
+                    .Include("DamageType1")
+                    .Include("Tags")
+                    .Include("DamageType2")
+                    .SingleOrDefault(m => m.Id == id);
+
+                //context.Video_Group.Include(v => v.Video_Group_Personnel_Group.Select(s => s.Personnel_Group))
             }
         }
 
