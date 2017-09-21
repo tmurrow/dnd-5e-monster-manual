@@ -13,25 +13,17 @@ namespace MonsterManual5e.Views.Encounter
 {
     public class EncounterController : Controller
     {
+        private EncounterRepository encounterRepo = new EncounterRepository();
+
         // GET: Encounter
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult AddToEncounter() //int id)
+        public void AddToEncounter(int monsterID, string encounterID)
         {
-            return View();
-        }
-
-        public ActionResult AddToDifficultyCalculator() //int id)
-        {
-            if (Request.IsAjaxRequest())
-            {
-                
-            }
-
-            return View();
+            encounterRepo.AddMonsterToEncounter(monsterID, Convert.ToInt32(encounterID));
         }
     }
 }
