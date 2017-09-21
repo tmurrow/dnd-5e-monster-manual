@@ -26,6 +26,11 @@ namespace MonsterManual5e.Views.Encounter
 
         public ActionResult AddToDifficultyCalculator() //int id)
         {
+            if (Request.IsAjaxRequest())
+            {
+                
+            }
+
             return View();
         }
     }

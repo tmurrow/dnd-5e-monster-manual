@@ -506,6 +506,7 @@
     <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\encounter.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
     <Content Include="Scripts\jquery-3.1.1.slim.js" />
@@ -547,6 +548,7 @@
     <Content Include="Views\Search\_Results.cshtml" />
     <Content Include="Views\Encounter\DifficultyCalculator.cshtml" />
     <Content Include="Views\Monster\Edit.cshtml" />
+    <Content Include="Views\Encounter\_AddToDifficultyCalculator.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

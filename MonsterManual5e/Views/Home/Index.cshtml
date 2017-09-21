@@ -113,10 +113,56 @@
                         <td>@monster.ChallengeRating</td>
                         <td>@monster.ExperiencePoints</td>
                         <td>@monster.Source.Abbreviation @monster.SourcePage</td>
-                        <td>@Html.ActionLink("Encounter", "AddToEncounter", "Encounter", monster.Id, null) | @Html.ActionLink("Difficulty Calculator", "AddToDifficultyCalculator", "Encounter", monster.Id, null)</td>
+                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addToEncounterModal" data-id="@monster.Id">Encounter</button><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#difficultyCalculatorModal" data-id="@monster.Id">Difficulty Calculator</button></td>
                     </tr>
                 }
             </tbody>
         </table>
+    </div>
+</div>
+
+<!-- Add to Encounter Modal -->
+<div class="modal fade" id="addToEncounterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add to Encounter</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" name="id" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add to Difficulty Calculator Modal -->
+<div class="modal fade" id="difficultyCalculatorModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add to Difficulty Calculator</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <input type="hidden" name="id" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Add</button>
+            </div>
+        </div>
     </div>
 </div>
