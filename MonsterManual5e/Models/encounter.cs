@@ -16,6 +16,8 @@ namespace MonsterManual5e.Models
 
         public int Experience { get; set; }
 
+        public int DifficultyXp { get; set; }
+
         public virtual ICollection<Monster> Monsters { get; set; }
 
     }

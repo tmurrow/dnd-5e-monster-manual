@@ -31,6 +31,10 @@ namespace MonsterManual5e.Models
 
         public DbSet<Encounter> Encounters { get; set; }
 
+        public DbSet<EncounterDifficultyThreshold> EncounterDifficultyThreshold { get; set; }
+
+        public DbSet<EncounterXpMultiplier> EncounterXpMultiplier { get; set; }
+
         public DbSet<InfoType> InfoType { get; set; }
 
         public DbSet<Language> Languages { get; set; }
@@ -72,6 +76,8 @@ namespace MonsterManual5e.Models
             modelBuilder.Configurations.Add(new ConditionMap());
             modelBuilder.Configurations.Add(new DamageTypeMap());
             modelBuilder.Configurations.Add(new EncounterMap());
+            modelBuilder.Configurations.Add(new EncounterDifficultyThresholdMap());
+            modelBuilder.Configurations.Add(new EncounterXpMultiplierMap());
             modelBuilder.Configurations.Add(new InfoTypeMap());
             modelBuilder.Configurations.Add(new LanguageMap());
             modelBuilder.Configurations.Add(new MonsterMap());

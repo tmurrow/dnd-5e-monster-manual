@@ -20,6 +20,7 @@ namespace MonsterManual5e.Models.Mapping
             this.Property(t => t.Id).HasColumnName("id");
             this.Property(t => t.Name).HasColumnName("name");
             this.Property(t => t.Experience).HasColumnName("experience");
+            this.Property(t => t.DifficultyXp).HasColumnName("difficulty_xp");
 
             // Relationships
             this.HasMany(t => t.Monsters)
