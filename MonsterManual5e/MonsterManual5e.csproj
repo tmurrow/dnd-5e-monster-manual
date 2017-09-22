@@ -206,7 +206,6 @@
     <Compile Include="Models\Mapping\sourceMap.cs" />
     <Compile Include="Models\Mapping\speedMap.cs" />
     <Compile Include="Models\Mapping\tagMap.cs" />
-    <Compile Include="Models\Mapping\xref_encounter_monsterMap.cs" />
     <Compile Include="Models\Mapping\xref_monster_damage_typeMap.cs" />
     <Compile Include="Models\Mapping\xref_monster_infoMap.cs" />
     <Compile Include="Models\Mapping\xref_monster_languageMap.cs" />

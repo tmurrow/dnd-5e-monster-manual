@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.12, for Win64 (x86_64)
 --
 -- Host: localhost    Database: dnd_monster
 -- ------------------------------------------------------
--- Server version	5.7.19-log
+-- Server version	5.7.16-log
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `xref_encounter_monster`
+-- Table structure for table `xref_monster_encounter`
 --
 
-DROP TABLE IF EXISTS `xref_encounter_monster`;
+DROP TABLE IF EXISTS `xref_monster_encounter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `xref_encounter_monster` (
+CREATE TABLE `xref_monster_encounter` (
   `encounter_id` int(11) NOT NULL,
   `monster_id` int(11) NOT NULL,
   KEY `monster_id_encounter_idx` (`monster_id`),
@@ -33,12 +33,12 @@ CREATE TABLE `xref_encounter_monster` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `xref_encounter_monster`
+-- Dumping data for table `xref_monster_encounter`
 --
 
-LOCK TABLES `xref_encounter_monster` WRITE;
-/*!40000 ALTER TABLE `xref_encounter_monster` DISABLE KEYS */;
-/*!40000 ALTER TABLE `xref_encounter_monster` ENABLE KEYS */;
+LOCK TABLES `xref_monster_encounter` WRITE;
+/*!40000 ALTER TABLE `xref_monster_encounter` DISABLE KEYS */;
+/*!40000 ALTER TABLE `xref_monster_encounter` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-09-21 14:46:09
+-- Dump completed on 2017-09-21 23:52:13
