@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>MonsterManual5e</RootNamespace>
     <AssemblyName>MonsterManual5e</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -227,6 +227,7 @@
     <Compile Include="Models\xref_monster_skill.cs" />
     <Compile Include="Models\xref_monster_speed.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EncounterRepository.cs" />
     <Compile Include="Repositories\MonsterRepository.cs" />
     <Compile Include="ViewModels\ListViewModel.cs" />
     <Compile Include="ViewModels\MonsterViewModel.cs" />
